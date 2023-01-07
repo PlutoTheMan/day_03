@@ -6,7 +6,6 @@ def validate_pesel(pesel):
         return False
         # raise ValueError
     if len(pesel_lista) != 11:
-        print("..")
         return False
         # raise IndexError
 
@@ -15,7 +14,7 @@ def validate_pesel(pesel):
         for i in range(10):
             sum += int(pesel_lista[i]) * int(waga[i])
         control_number = 10 - sum % 10
-        # print(control_number)
+        # control_number = 0 if control_number == 10 else control_number
         if control_number == int(pesel_lista[10]):
             return True
         return False
@@ -24,5 +23,7 @@ def validate_pesel(pesel):
         return
 
 
-print(validate_pesel(44051401359))
-print(validate_pesel("abc"))
+print(validate_pesel(124124124))
+# print(validate_pesel(09220399640))
+# print(validate_pesel(92061555760))
+# print(validate_pesel("abc"))
